@@ -57,6 +57,16 @@ const handleAddCustomer = () => {
   // TODO: Implement add customer functionality
   console.log("Add customer clicked");
 };
+
+const handleEditCustomer = (customerId: number) => {
+  // TODO: Implement edit customer functionality
+  console.log("Edit customer:", customerId);
+};
+
+const handleDeleteCustomer = (customerId: number) => {
+  // TODO: Implement delete customer functionality
+  console.log("Delete customer:", customerId);
+};
 </script>
 
 <template>
@@ -75,6 +85,9 @@ const handleAddCustomer = () => {
               <th class="h-12 px-4 text-left align-middle font-medium">
                 Email
               </th>
+              <th class="h-12 px-4 text-right align-middle font-medium">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -86,6 +99,24 @@ const handleAddCustomer = () => {
               <td class="p-4 align-middle">{{ customer.id }}</td>
               <td class="p-4 align-middle">{{ customer.name }}</td>
               <td class="p-4 align-middle">{{ customer.email }}</td>
+              <td class="p-4 align-middle">
+                <div class="flex justify-end gap-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    @click="handleEditCustomer(customer.id)"
+                  >
+                    Edit
+                  </Button>
+                  <Button
+                    variant="destructive"
+                    size="sm"
+                    @click="handleDeleteCustomer(customer.id)"
+                  >
+                    Delete
+                  </Button>
+                </div>
+              </td>
             </tr>
           </tbody>
         </Table>
