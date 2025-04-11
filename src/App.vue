@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import Button from "@/components/ui/button.vue";
 
 const message = ref("Hello World!");
 </script>
@@ -13,6 +14,11 @@ const message = ref("Hello World!");
         {{ message }}
       </h1>
       <p class="text-center text-muted-foreground">Welcome to our ERP system</p>
+      <div class="w-full max-w-md space-y-4">
+        <Button>Click me</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="outline">Outline</Button>
+      </div>
     </div>
   </div>
 </template>
